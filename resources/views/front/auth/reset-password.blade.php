@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Register</title>
+    <title>Reset Password</title>
 
     <meta name="description" content="" />
 
@@ -138,29 +138,19 @@
               <h4 class="mb-2">Adventure starts here 🚀</h4>
               <p class="mb-4">Make your app management easy and fun!</p>
 
-              <form method="POST" action="{{ route('register') }}" class="mb-3">
+              <form method="POST" action="{{ route('password.store') }}" class="mb-3">
                 @csrf
                 <div class="mb-3">
-                    <label for="email" class="form-label">Name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="name"
-                      value="{{ old('name') }}"
-                      placeholder="Enter your name"
-                      autofocus
-                    />
-                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
-                </div>
-                <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
+                  <input type="hidden" name="token" value="{{ $request->route('token') }}">
                   <input
                     type="email"
                     class="form-control"
                     name="email"
-                    value="{{ old('email') }}"
+                    value="{{ old('email', $request->email) }}"
                     placeholder="Enter your email"
                     autofocus
+                    required
                   />
                   <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
@@ -179,6 +169,7 @@
                   </div>
                   <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
+
                 <div class="mb-3 form-password-toggle">
                     <label class="form-label" for="password">Confirm Password</label>
                     <div class="input-group input-group-merge">
@@ -193,17 +184,9 @@
                       />
                       <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                     </div>
-                    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
-                <button type="submit" class="btn btn-primary d-grid w-100">Sign up</button>
+                <button type="submit" class="btn btn-primary d-grid w-100">Reset Password</button>
               </form>
-
-              <p class="text-center">
-                <span>Already have an account?</span>
-                <a href="{{ route('login') }}">
-                  <span>Sign in instead</span>
-                </a>
-              </p>
             </div>
           </div>
           <!-- Register Card -->
