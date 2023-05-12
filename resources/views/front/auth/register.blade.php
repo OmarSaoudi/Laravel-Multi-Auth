@@ -146,9 +146,11 @@
                       type="text"
                       class="form-control"
                       name="name"
+                      value="{{ old('name') }}"
                       placeholder="Enter your name"
                       autofocus
                     />
+                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
@@ -156,9 +158,11 @@
                     type="email"
                     class="form-control"
                     name="email"
+                    value="{{ old('email') }}"
                     placeholder="Enter your email"
                     autofocus
                   />
+                  <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <label class="form-label" for="password">Password</label>
@@ -167,14 +171,16 @@
                       type="password"
                       class="form-control"
                       name="password"
+                      value="{{ old('password') }}"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                       aria-describedby="password"
                     />
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
+                  <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
 
-                <div class="mb-3 form-password-toggle">
+                {{-- <div class="mb-3 form-password-toggle">
                     <label class="form-label" for="password">Confirm Password</label>
                     <div class="input-group input-group-merge">
                       <input
@@ -182,12 +188,13 @@
                         class="form-control"
                         value="{{ old('password_confirmation') }}"
                         name="password_confirmation"
+                        value="{{ old('password_confirmation') }}"
                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                         aria-describedby="password_confirmation"
                       />
                       <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                     </div>
-                </div>
+                </div> --}}
                 <button type="submit" class="btn btn-primary d-grid w-100">Sign up</button>
               </form>
 
