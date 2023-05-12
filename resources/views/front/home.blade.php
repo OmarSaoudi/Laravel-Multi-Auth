@@ -1,6 +1,6 @@
 @extends('front.partials.master')
 
-@section('title','Home Page')
+@section('title','Front Home Page')
 
 @section('content')
 <div class="row">
