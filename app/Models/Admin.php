@@ -11,7 +11,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Admin extends Authenticatable implements MustVerifyEmail
+class Admin extends Authenticatable
+//  implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -20,6 +21,11 @@ class Admin extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
+
+    // public function sendPasswordResetNotification($token)
+    // {
+    //     $this->notify(new UpdatedEmailNotification($token));
+    // }
 
     protected $fillable = [
         'name',

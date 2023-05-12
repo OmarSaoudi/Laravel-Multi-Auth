@@ -138,7 +138,7 @@
               <h4 class="mb-2">Adventure starts here 🚀</h4>
               <p class="mb-4">Make your app management easy and fun!</p>
 
-              <form method="POST" action="{{ route('register') }}" class="mb-3">
+              <form method="POST" action="{{ route('back.register') }}" class="mb-3">
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Name</label>
@@ -200,7 +200,7 @@
 
               <p class="text-center">
                 <span>Already have an account?</span>
-                <a href="{{ route('login') }}">
+                <a href="{{ route('back.login') }}">
                   <span>Sign in instead</span>
                 </a>
               </p>

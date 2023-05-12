@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', fn () => redirect()->route('login'));
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::prefix('front')->name('front.')->group(function () {
     Route::get('/', FrontHomeController::class)->middleware('auth')->name('index');
@@ -25,11 +27,14 @@ Route::prefix('front')->name('front.')->group(function () {
     // Route::view('/forgot-password','front.auth.forgot-password');
 });
 
+require __DIR__.'/auth.php';
+
 Route::prefix('back')->name('back.')->group(function () {
-    Route::get('/', BackHomeController::class)->name('index');
-    Route::view('/login','back.auth.login');
-    Route::view('/register','back.auth.register');
-    Route::view('/forgot-password','back.auth.forgot-password');
+    Route::get('/', BackHomeController::class)->middleware('admin')->name('index');
+    // Route::view('/login','back.auth.login');
+    // Route::view('/register','back.auth.register');
+    // Route::view('/forgot-password','back.auth.forgot-password');
+    require __DIR__.'/adminauth.php';
 });
 
 
@@ -45,4 +50,3 @@ Route::prefix('back')->name('back.')->group(function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-require __DIR__.'/auth.php';

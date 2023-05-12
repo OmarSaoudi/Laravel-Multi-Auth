@@ -138,7 +138,7 @@
               <h4 class="mb-2">Forgot Password? 🔒</h4>
               <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
               <x-auth-session-status class="mb-4" :status="session('status')" />
-              <form method="POST" action="{{ route('password.email') }}" class="mb-3">
+              <form method="POST" action="{{ route('back.password.email') }}" class="mb-3">
                 @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
@@ -156,7 +156,7 @@
                 <button type="submit" class="btn btn-primary d-grid w-100">Send Reset Link</button>
               </form>
               <div class="text-center">
-                <a href="{{ route('login') }}" class="d-flex align-items-center justify-content-center">
+                <a href="{{ route('back.login') }}" class="d-flex align-items-center justify-content-center">
                   <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
                   Back to login
                 </a>

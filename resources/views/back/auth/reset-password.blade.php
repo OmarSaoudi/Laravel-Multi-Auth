@@ -138,7 +138,7 @@
               <h4 class="mb-2">Adventure starts here 🚀</h4>
               <p class="mb-4">Make your app management easy and fun!</p>
 
-              <form method="POST" action="{{ route('password.store') }}" class="mb-3">
+              <form method="POST" action="{{ route('back.password.store') }}" class="mb-3">
                 @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>

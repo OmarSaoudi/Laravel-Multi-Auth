@@ -138,7 +138,7 @@
               <h4 class="mb-2">Welcome to Sneat! 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
               <x-auth-session-status class="mb-4" :status="session('status')" />
-              <form id="formAuthentication" class="mb-3" method="POST" action="{{ route('login') }}">
+              <form id="formAuthentication" class="mb-3" method="POST" action="{{ route('back.login') }}">
                 @csrf
 
                 <div class="mb-3">
@@ -156,7 +156,7 @@
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                         <label class="form-label" for="password">Password</label>
-                        <a href="{{ route('password.request') }}">
+                        <a href="{{ route('back.password.request') }}">
                           <small>Forgot Password?</small>
                         </a>
                   </div>
@@ -186,7 +186,7 @@
 
               <p class="text-center">
                 <span>New on our platform?</span>
-                <a href="{{ route('register') }}">
+                <a href="{{ route('back.register') }}">
                   <span>Create an account</span>
                 </a>
               </p>
