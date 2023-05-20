@@ -131,7 +131,7 @@
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">Back</span>
+                  <span class="app-brand-text demo text-body fw-bolder">back</span>
                 </a>
               </div>
               <!-- /Logo -->

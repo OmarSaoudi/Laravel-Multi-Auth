@@ -89,7 +89,7 @@ id="layout-navbar"
         </li>
         <li>
 
-            <form class="dropdown-item" method="POST" action="{{ route('logout') }}">
+            <form class="dropdown-item" method="POST" action="{{ route('back.logout') }}">
                 @csrf
                 <a class="dropdown-item" href="javascript:{}" onclick="this.closest('form').submit();return false;">
                     <i class="bx bx-power-off me-2"></i>
